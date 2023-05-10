@@ -29,7 +29,7 @@ spec:
               containerPort: 8081
           livenessProbe:
             httpGet:
-              path: /actuator/health
+              path: /health
               port: 8081
             initialDelaySeconds: 15
             periodSeconds: 30
