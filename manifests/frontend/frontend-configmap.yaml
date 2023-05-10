@@ -15,6 +15,6 @@ data:
     }
 
     location ~ ^/(?:products|categories|orders|metrics|auth/whoami)  {
-      proxy_pass http://momoback:8081;
+      proxy_pass http://backend:8081;
     }
     } 
