@@ -4,7 +4,7 @@ global:
 
   backend: 
     image: 
-      repository: gitlab.praktikum-services.ru:5050/std-009-052/momo-store/momo-backend:latest
+      repository: gitlab.praktikum-services.ru:5050/std-009-052/momo-store/momo-backend
     imagePullPolicy: Always
     replicas: 2
     
@@ -14,7 +14,7 @@ global:
 
   frontend:
     image: 
-      repository: gitlab.praktikum-services.ru:5050/std-009-052/momo-store/momo-frontend:latest
+      repository: gitlab.praktikum-services.ru:5050/std-009-052/momo-store/momo-frontend
     imagePullPolicy: Always
     replicas: 1
     service:
