@@ -8,8 +8,8 @@ metadata:
 spec:
   tls:
     - hosts:
-        - "{{ .Values.global.frontend.ingress.host }}"
-        secretName: letsencrypt
+      - "{{ .Values.global.frontend.ingress.host }}"
+      secretName: letsencrypt
   rules:
     - host: "{{ .Values.global.frontend.ingress.host }}"
       http:
