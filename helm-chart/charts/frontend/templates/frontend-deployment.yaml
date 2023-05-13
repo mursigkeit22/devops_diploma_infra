@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  labels:
+    environment: {{ .Values.global.environment }}
+    app: frontend
+    app.kubernetes.io/version: {{ .Chart.AppVersion }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    app.kubernetes.io/part-of: sausage-store
+    helm.sh/chart: {{ .Chart.Name }}-{{ .Chart.Version }}
+spec:
+  revisionHistoryLimit: 15
+  replicas: {{ .Values.global.frontend.replicas }}
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+        - name: frontend
+          image: {{ .Values.global.frontend.image.repository }}:{{ .Chart.AppVersion }}
+          imagePullPolicy: {{ .Values.global.backend.imagePullPolicy }}
+          ports:
+            - name: frontend
+              containerPort: 8080
+          volumeMounts:
+          - name: nginx-conf
+            mountPath: /etc/nginx/conf.d/default.conf
+            subPath: default.conf
+            readOnly: true
+      volumes:
+        - name: nginx-conf
+          configMap:
+            name: nginx-conf
+            items:
+              - key: nginx.conf
+                path: default.conf
+      imagePullSecrets:
+        - name: docker-config-secret
+
