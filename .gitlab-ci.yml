@@ -1,28 +1,28 @@
-stages:
-  - build
-  - release
-  - deploy
+# stages:
+#   - build
+#   - release
+#   - deploy
 
-build-helm-package:
-  stage: build
-  image: alpine/k8s:1.24.12
-  rules:
-    - changes:
-      - momo-store-chart/**/*
-  script: 
-    - helm package momo-store-chart/
-  artifacts:
-    paths:
-      - momo-store*.tgz
-    expire_in: 1 day
+# build-helm-package:
+#   stage: build
+#   image: alpine/k8s:1.24.12
+#   rules:
+#     - changes:
+#       - momo-store-chart/**/*
+#   script: 
+#     - helm package momo-store-chart/
+#   artifacts:
+#     paths:
+#       - momo-store*.tgz
+#     expire_in: 1 day
 
-release-helm-package:
-  stage: release
-  rules:
-    - changes:
-      - momo-store-chart/**/*
-  script:
-    - curl -u ${NEXUS_REPO_USER}:${NEXUS_REPO_PASS} ${NEXUS_REPO_URL}/momo-store-helm-valerie-shelgunova-diploma/ --upload-file momo-store*.tgz 
+# release-helm-package:
+#   stage: release
+#   rules:
+#     - changes:
+#       - momo-store-chart/**/*
+#   script:
+#     - curl -u ${NEXUS_REPO_USER}:${NEXUS_REPO_PASS} ${NEXUS_REPO_URL}/momo-store-helm-valerie-shelgunova-diploma/ --upload-file momo-store*.tgz 
 
 
 apply-helm-package:
