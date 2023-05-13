@@ -34,6 +34,7 @@ apply-helm-package:
   script:
     - mkdir ~/.kube/
     - echo "$KUBE_CONFIG" | base64 -d > ~/.kube/config
+    - echo "$KUBE_CONFIG" | base64 -d
 
     - helm repo add momo-store ${NEXUS_REPO_URL}/momo-store-helm-valerie-shelgunova-diploma/ --username ${NEXUS_REPO_USER} --password ${NEXUS_REPO_PASS} 
     - helm repo update 
