@@ -9,7 +9,7 @@ spec:
   ingressClassName: "nginx"
   tls:
     - hosts:
-        - "{{ .Values.global.frontend.ingress.host }}"
+        - "devopsdiploma.site"
         secretName: letsencrypt
   rules:
     - host: "{{ .Values.global.frontend.ingress.host }}"
