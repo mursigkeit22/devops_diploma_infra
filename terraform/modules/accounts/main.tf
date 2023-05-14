@@ -13,3 +13,4 @@ resource "yandex_resourcemanager_folder_iam_member" "service-account-puller" {
   role        = "container-registry.images.puller"
   member      = "serviceAccount:${resource.yandex_iam_service_account.sa.id}"
 }
+
