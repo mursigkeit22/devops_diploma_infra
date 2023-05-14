@@ -11,4 +11,6 @@ dependencies:
     version: 0.0.1
   - name: frontend
     version: 0.0.1
+  - name: common_templates
+    version: 0.0.1
  
