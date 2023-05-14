@@ -1,6 +1,6 @@
 apiVersion: v2
 type: application
-name: common templates
+name: common_templates
 description: Momo Store Helm Chart
 
 version: 0.0.1
