@@ -28,6 +28,7 @@ spec:
         prometheus.io/scrape: "true" 
       labels:
         app: backend
+        date: "{{ now | unixEpoch }}"
     spec:
       containers:
         - name: backend
