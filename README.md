@@ -2,7 +2,8 @@
 
 Прометеус и графана для удобства проверки:
  https://prometheus.devopsdiploma.site/
- https://grafana.devopsdiploma.site/
+
+ https://grafana.devopsdiploma.site/ (admin admin)
 ### Шаги:
 - докеризовать приложение  (репозиторий по ссылке https://gitlab.praktikum-services.ru/std-009-052/momo-store)
 -  купить домен
