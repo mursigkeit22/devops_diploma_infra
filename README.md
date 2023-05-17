@@ -1,6 +1,7 @@
 Приложение доступно по ссылке: https://devopsdiploma.site/catalog
 
 Прометеус и графана для удобства проверки:
+
  https://prometheus.devopsdiploma.site/
 
  https://grafana.devopsdiploma.site/ (admin admin)
