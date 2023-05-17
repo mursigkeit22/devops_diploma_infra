@@ -1,3 +1,7 @@
+Приложение доступно по ссылке: https://devopsdiploma.site/catalog
+Прометеус и графана:
+ https://prometheus.devopsdiploma.site/
+ https://grafana.devopsdiploma.site/
 ### Шаги:
 - докеризовать приложение  (репозиторий по ссылке https://gitlab.praktikum-services.ru/std-009-052/momo-store)
 -  купить домен
