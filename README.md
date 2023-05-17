@@ -25,7 +25,7 @@
 - подключить Prometheus в кластер
 	- манифесты лежат по ссылке https://gitlab.praktikum-services.ru/std-009-052/diploma_infra/-/tree/main/manifests/prometheus
 	- UI по ссылке https://prometheus.devopsdiploma.site/graph 
-	- добавила kube-state-metrics https://github.com/kubernetes/kube-state-metrics 
+	- добавить kube-state-metrics https://github.com/kubernetes/kube-state-metrics 
 - подключить локи и графану в кластер
     - в том же неймспейсе, что и Prometheus
 	- репозиторий с helm-чартом https://github.com/grafana/helm-charts/tree/main/charts/loki-stack
