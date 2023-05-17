@@ -9,13 +9,14 @@
 - докеризовать приложение  (репозиторий по ссылке https://gitlab.praktikum-services.ru/std-009-052/momo-store)
     - перенести картинки в S3 хранилище
 -  купить домен
--  поднять инфраструктуру ( terraform конфиги по ссылке https://gitlab.praktikum-services.ru/std-009-052/diploma_infra/-/tree/main/terraform)
+-  поднять инфраструктуру: служебные аккаунты, сети, k8s-кластер, ноды
+    - terraform конфиги по ссылке https://gitlab.praktikum-services.ru/std-009-052/diploma_infra/-/tree/main/terraform
 - установить Ingress-контроллер NGINX с менеджером для сертификатов Let's Encrypt по инструкции https://cloud.yandex.ru/docs/managed-kubernetes/tutorials/ingress-cert-manager 
 	- манифест acme-issuer.yaml для создания сертификатов лежит по ссылке https://gitlab.praktikum-services.ru/std-009-052/diploma_infra/-/tree/helm/manifests
 	- настроить DNS запись по инструкции https://cloud.yandex.ru/docs/dns/quickstart
 - создать статический файл конфигурации для подключения к кластеру из пайплайна Гитлаба по инструкции https://cloud.yandex.ru/docs/managed-kubernetes/operations/connect/create-static-conf и добавить его в переменные Гитлаба
 	- манифест sa.yaml для создания сервисного аккаунта лежит по ссылке https://gitlab.praktikum-services.ru/std-009-052/diploma_infra/-/tree/helm/manifests
-	- в конфиге certificate-authority на certificate-authority-data. Содержимое сертификата должно быть в base64: cat ca.pem | base64 -w 0  (Mожно взять из файла .kube/config)
+	- в конфиге поменять certificate-authority на certificate-authority-data. Содержимое сертификата должно быть в base64: cat ca.pem | base64 -w 0  (Mожно взять из файла .kube/config)
 	- добавить неймспейс (default в данном случае) в конфиг, чтобы не было конфликта с неймспейсом гитлаба 
 - создать helm package приложения:
 	- завести в Nexus  репозиторий для helm-пакетов, добавить креды в gitlab
@@ -26,8 +27,9 @@
 	- UI по ссылке https://prometheus.devopsdiploma.site/graph 
 	- добавила kube-state-metrics https://github.com/kubernetes/kube-state-metrics 
 - подключить локи и графану в кластер
+    - в том же неймспейсе, что и Prometheus
 	- репозиторий с helm-чартом https://github.com/grafana/helm-charts/tree/main/charts/loki-stack
 	- UI графаны по адресу https://grafana.devopsdiploma.site/ , логин admin пароль admin 
-	- ингрес-файл по ссылке https://gitlab.praktikum-services.ru/std-009-052/diploma_infra/-/blob/main/manifests/grafana/grafana-ingress.yaml
+	- ингресс-файл по ссылке https://gitlab.praktikum-services.ru/std-009-052/diploma_infra/-/blob/main/manifests/grafana/grafana-ingress.yaml
 	- подключить 2 datasource'а: локи и прометеус
 	- импортировать дашборды
