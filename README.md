@@ -7,6 +7,7 @@
  https://grafana.devopsdiploma.site/ (admin admin)
 ### Шаги:
 - докеризовать приложение  (репозиторий по ссылке https://gitlab.praktikum-services.ru/std-009-052/momo-store)
+    - перенести картинки в S3 хранилище
 -  купить домен
 -  поднять инфраструктуру ( terraform конфиги по ссылке https://gitlab.praktikum-services.ru/std-009-052/diploma_infra/-/tree/main/terraform)
 - установить Ingress-контроллер NGINX с менеджером для сертификатов Let's Encrypt по инструкции https://cloud.yandex.ru/docs/managed-kubernetes/tutorials/ingress-cert-manager 
